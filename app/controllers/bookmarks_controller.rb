@@ -1,20 +1,16 @@
 class BookmarksController < ApplicationController
+  before_action :find_list, :find_movies_with_ids, only: %i[new create]
 
   def new
-    @movie_names_and_id = Movie.all.map { |item| [item.title, item.id] }
-    @list = List.find(params[:list_id])
     @bookmark = Bookmark.new
   end
 
   def create
-    @list = List.find(params[:list_id])
     @bookmark = Bookmark.new(bookmark_params)
     @bookmark.list = @list
-    # @bookmark.movie = Movie.where(title: params[:bookmark][:movie]).first
     if @bookmark.save
       redirect_to list_path(@list)
     else
-      @movie_names_and_id = Movie.all.map { |item| [item.title, item.id] }
       render :new
     end
   end
@@ -22,11 +18,20 @@ class BookmarksController < ApplicationController
   def destroy
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
+    redirect_to list_path(find_list)
   end
 
   private
 
   def bookmark_params
-    params.require(:bookmark).permit(:comment, :movie_id, :list_id)
+    params.require(:bookmark).permit(:comment, :movie_id)
+  end
+
+  def find_list
+    @list = List.find(params[:list_id])
+  end
+
+  def find_movies_with_ids
+    @movie_names_and_id = Movie.all.map { |item| [item.title, item.id] }
   end
 end

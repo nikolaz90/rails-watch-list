@@ -1,4 +1,6 @@
 <h1>Lists#index</h1>
 <% @lists.each do |item| %>
-  <p><%= item.name %></p>
+  <%= link_to list_path(item) do %>
+    <p><%= item.name %></p>
+  <% end %>
 <% end %>
