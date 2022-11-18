@@ -1,9 +1,11 @@
 <section>
-  <h3>Lists#index</h3>
+  <h3>Lists</h3>
   <% @lists.each do |item| %>
     <%= link_to list_path(item) do %>
-      <p><%= item.name %></p>
-      <%= cl_image_tag item.photo.key, width: 200, height: 150 if item.photo.attached? %>
+      <article class="index-list-card">
+        <p><%= item.name %></p>
+        <%= cl_image_tag item.photo.key, width: 200, height: 150 if item.photo.attached? %>
+      </article>
     <% end %>
   <% end %>
 </section>
