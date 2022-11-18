@@ -1,6 +1,8 @@
-<h1>Lists#index</h1>
-<% @lists.each do |item| %>
-  <%= link_to list_path(item) do %>
-    <p><%= item.name %></p>
+<section>
+  <h3>Lists#index</h3>
+  <% @lists.each do |item| %>
+    <%= link_to list_path(item) do %>
+      <p><%= item.name %></p>
+    <% end %>
   <% end %>
-<% end %>
+</section>

@@ -1,12 +1,37 @@
-.navbar-lewagon {
+// .navbar-lewagon {
+//   justify-content: space-between;
+//   background: white;
+// }
+
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
+
+// .navbar-lewagon .navbar-brand img {
+//   width: 40px;
+// }
+
+nav {
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  background: white;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  align-items: center;
+  background-color: rgb(232, 232, 232);
+  height: 5rem;
+  position: sticky;
+  top:0;
+  transition: all ease-in-out 0.3s;
+  z-index: 1;
+  div > a {
+    color: inherit;
+    text-decoration: none;
+    margin-right: 2rem;
+    opacity: 0.7;
+    transition: all 0.1s ease-in-out;
+  }
+  div > a:hover {
+    color: inherit;
+    opacity: 1;
+  }
 }
