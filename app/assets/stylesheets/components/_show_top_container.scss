@@ -1,0 +1,13 @@
+.show-top-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  img {
+    border-radius: 1rem;
+  }
+  a {
+    @include color-btn;
+  }
+}

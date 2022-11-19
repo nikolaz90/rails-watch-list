@@ -1,0 +1,26 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 3rem 1rem;
+  border-radius: 0.3rem;
+  border: 2px solid white;
+  line-height: 2rem;
+  input[type="text"] {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid yellowgreen;
+    border-radius: 0.3rem;
+  }
+  input[type="file"] {
+    border: 2px solid yellowgreen;
+    border-radius: 0.3rem;
+    cursor: pointer;
+  }
+  input[type="submit"] {
+    @include color-btn;
+    margin-top: 1rem;
+  }
+  select {
+    margin-top: 1rem;
+  }
+}

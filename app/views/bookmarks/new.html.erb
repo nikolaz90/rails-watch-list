@@ -1,11 +1,12 @@
 <section>
-<h1>Bookmarks#new</h1>
-<%= form_with model: [@list, @bookmark] do |form| %>
-  <%= form.text_field :comment %>
-  <%= form.select :movie_id, @movie_names_and_id %>
-  <%= form.submit %>
-<% end %>
-
+  <h1>Add a bookmarks</h1>
+  <%= form_with model: [@list, @bookmark], class: "form-container" do |form| %>
+    <%= form.label :comment %>
+    <%= form.text_field :comment %>
+    <%= form.label :movie_id %>
+    <%= form.select :movie_id, @movie_names_and_id %>
+    <%= form.submit %>
+  <% end %>
 </section>
 
 <%# <%= simple_form_for [@list, @bookmark] do |form| %>

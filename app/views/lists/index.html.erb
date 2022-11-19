@@ -1,9 +1,9 @@
 <section>
   <h3>Lists</h3>
-  <% @lists.each do |item| %>
+  <% @lists.each_with_index do |item, index| %>
     <%= link_to list_path(item) do %>
       <article class="list-card">
-        <h2><%= item.name %></h2>
+        <h2><%= "#{index + 1} - #{item.name}" %></h2>
         <%= cl_image_tag item.photo.key, width: 200, height: 150 if item.photo.attached? %>
       </article>
     <% end %>

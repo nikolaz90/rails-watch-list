@@ -1,0 +1,15 @@
+@mixin color-btn {
+  padding:1rem;
+  min-width: 6rem;
+  height: fit-content;
+  background-color: transparent;
+  border-radius: 0.4rem;
+  border: 3px solid yellowgreen;
+  color: yellowgreen;
+  transition: all ease-in-out 0.3s;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: yellowgreen;
+    box-shadow: 6px 6px 0px yellowgreen;
+  }
+}
