@@ -2,8 +2,8 @@
   <h3>Lists</h3>
   <% @lists.each do |item| %>
     <%= link_to list_path(item) do %>
-      <article class="index-list-card">
-        <p><%= item.name %></p>
+      <article class="list-card">
+        <h2><%= item.name %></h2>
         <%= cl_image_tag item.photo.key, width: 200, height: 150 if item.photo.attached? %>
       </article>
     <% end %>

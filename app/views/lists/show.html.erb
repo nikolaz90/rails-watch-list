@@ -3,7 +3,7 @@
   <%= cl_image_tag @list.photo.key, width: 200, height: 150 if @list.photo.attached? %>
   <%= link_to 'add a bookmark', new_list_bookmark_path(@list) %>
   <% @bookmarks.each_with_index do |item, index| %>
-    <article class="index-list-card">
+    <article class="list-card">
       <p><%= index + 1 %></p>
       <p><%= "#{item.comment} #{item.movie.title}" %></p>
       <%= image_tag(item.movie.poster_url, size: "160x200", alt: item.movie.title) %>

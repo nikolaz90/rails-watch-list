@@ -1,4 +1,4 @@
-.index-list-card{
+.list-card{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -10,11 +10,15 @@
   margin: 2rem;
   border-radius: 0.3rem;
   img {
-    border-radius: 0.2rem;
+    border-radius: 1rem;
+    transition: all 0.3s ease-in-out;
   }
 }
 
-.index-list-card:hover {
+.list-card:hover {
   background-color: rgba(255, 255, 255, 1);
   border-radius: 1rem;
+  img {
+    border-radius: 0.3rem
+  }
 }
